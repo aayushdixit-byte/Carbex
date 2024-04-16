@@ -33,7 +33,7 @@ function ProductList() {
   return (
     <>{products.map(product => (
 
-      <div style={{display:'flex',width:'80vw',backgroundColor:'#2C4331',borderRadius:'3rem',margin:'3rem auto'}} >
+      <div key={product.id} style={{display:'flex',width:'80vw',backgroundColor:'#2C4331',borderRadius:'3rem',margin:'3rem auto'}} >
         <img src={projectImage} alt='project image'/>
         <form className='cont_one' style={{color:'white',fontWeight:'bold',margin:'4rem 6rem'}}>
           <h1 className='lspace' style={{fontSize:'4rem',fontWeight:'bold'}}>{product.productName}</h1>
