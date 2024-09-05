@@ -12,9 +12,9 @@ const Home = () => {
         <>
             <div className='home-page  '>
                 <Navbar/>
-                <form className="font t-white" style={{ marginTop: '24rem', marginLeft: '3rem' }}>
-                    <h1 style={{ fontSize: '3.2rem' }}>Erase Carbon Footprints and Combat Global Warming.</h1>
-                    <h4 style={{ marginTop: '2rem' }}>Transforming Industries with Authentic Carbon Neutrality Solutions,<br /> Shaping a Trustworthy Path to Net Zero.</h4>
+                <form className="font t-white" style={{ marginTop: '50vh', marginLeft: '3rem' }}>
+                    <h3 style={{ fontSize: '3.2rem', fontWeight: 'lighter' }}>Erase Carbon Footprints and Combat Global Warming.</h3>
+                    <h4 style={{ marginTop: '2rem', fontWeight: 'lighter'}}>Transforming Industries with Authentic Carbon Neutrality Solutions,<br /> Shaping a Trustworthy Path to Net Zero.</h4>
                     <div className='buttons mt-5'>
                         <button type="button" className="btn b btn-outline-primary sell">Sell Credit</button>
                         <button type="button" className="btn b buy">Buy Credit</button>
@@ -32,10 +32,10 @@ const Home = () => {
                 </form>
             </div>
             <div className='  page-3 '>
-                <div className="d-flex justify-content-around">
+                <div className="d-flex justify-content-between">
                     <div>
                         <h1 className='font' style={{ color: '#808080', fontWeight: 'bolder', marginTop: '15rem', marginLeft: '5rem', letterSpacing: '2px' }}><span style={{ color: '#2F4834' }}>Discover</span> how we help<br /> businesses to achieve<br /> carbon neutrality</h1>
-                        <img src={image} style={{ marginTop: '20%', marginLeft: '-70px', zIndex: '1' }} alt='back' />
+                        <img className='group12' src={image} style={{ marginTop: '20%', marginLeft: '-70px'}} alt='back' />
                     </div>
                     <form style={{ width: '40%', marginTop: '4%' }}>
                         <form >

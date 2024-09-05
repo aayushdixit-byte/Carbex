@@ -1,17 +1,23 @@
 import Navbar from "./navbar"
 import projectImage from '../Assets/detailsImg.png'
+import { useState } from "react"
 
 const ProjectDetails = () =>{
-
     
+    const lst = ['Description','Verification','Documents','Offset Capacity','Images and Videos','Clients','Blockchain Address']  
+    
+    const [selectedItemIndex,setItemIndex] = useState(null)
+    const handleClick = (index)=>{
+        setItemIndex(index)
+    }
 
     return (
         <>
-            <Navbar/>
+            <Navbar where={true}/>
             <div className="proj-detail" style={{display:'flex',height:'auto',overflow:'hidden'}}>
                 <form className="t-white t-shadow" style={{zIndex:'1',margin:'2rem',borderRight:'none'}}>
                     <h1 className="lspace" style={{fontSize:'3rem'}}>Sample name land fill Project</h1>
-                    <h3><i class="fa-solid fa-location-dot fa-lg" style={{marginRight:'.6rem'}}></i>162 Mountain Ave, Arizona, USA</h3>
+                    <h3><i className="fa-solid fa-location-dot fa-lg" style={{marginRight:'.6rem'}}></i>162 Mountain Ave, Arizona, USA</h3>
                     <ul style={{display:'flex',listStyle:'none',padding:'0',justifyContent:'space-between',alignItems:'center',fontSize:'1.2rem'}}>
                         <li>Certifier Name</li>
                         <li>Registry Name</li>
@@ -33,17 +39,13 @@ const ProjectDetails = () =>{
             <div style={{display:'flex',justifyContent:'space-around',margin:'4rem 3rem'}}>
                 <div className="frame">
                     <ul style={{listStyle:'none',color:'#3A8883',fontWeight:'bold',width:'100'}}>
-                        <li className="active">Description</li>
-                        <li>Verifications</li>
-                        <li>Documents</li>
-                        <li>Offset Capacity</li>
-                        <li>Images and Videos</li>
-                        <li>Clients</li>
-                        <li>Blockchain Address</li>
+                        {lst.map((item,index)=>(
+                            <li className={selectedItemIndex === index?'active':''} key={index} onClick={()=>handleClick(index)} style={{cursor:'pointer'}}>{item}</li>
+                        ))}
                     </ul>
                 </div>
                 <div className="desc-prod" style={{width:'40%'}}>
-                    <h1 className="lspace" style={{color:'#3A8883'}}>Description</h1>
+                    <h1 className="lspace" style={{color:'#3A8883'}}>{selectedItemIndex===null?'Description':lst[selectedItemIndex]}</h1>
                     <p style={{color:'#808080'}}>Each credit undergoes thorough verification and monitoring to ensure project performance accuracy. Since carbon credits vary by project type—whether reforestation or renewable energy—the market can become disintegrated, posing challenges ddd suppliers and consumers. Tokenization is essential to streamline buying and selling, facilitating accessibility for all market participants.<br/>
                     Project performance accuracy. Since carbon credits vary by project type—whether reforestation or renewable energy—the market can become disintegrated, posing challenges for suppliers and consumers. Tokenization is essential to streamline buying and selling, facilitating accessibility for all market participants.</p>
                 </div>
@@ -69,7 +71,7 @@ const ProjectDetails = () =>{
                         <dd>$204.40</dd>
                     </dl>
                     <div>
-                        <i class="fa-solid fa-cart-shopping fa-2xl" style={{color:'#3A8883',marginRight:'2rem'}}></i>
+                        <i className="fa-solid fa-cart-shopping fa-2xl" style={{color:'#3A8883',marginRight:'2rem'}}></i>
                         <button className="buy-now">Buy Now</button>
                     </div>
 

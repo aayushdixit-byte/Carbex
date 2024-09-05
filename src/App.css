@@ -36,7 +36,7 @@
 }
 
 .font{
-  font-family: Rubik;
+  font-family: "Rubik", sans-serif;
 }
 
 .bold{
@@ -87,13 +87,20 @@
   padding: 0;
 }
 
+.group12{
+  z-index: -1;
+  position: absolute;
+
+}
+
 .page-4{
   margin-top: 12%;
-  z-index: 2;
+  z-index: 0;
   background-image: url('./Assets/artificial\ Neurons\ 1.png');
   background-size: cover;
   background-position: center;
-  height: 80vh; 
+  height: 80vh;
+
 }
 .box{
   border-top-left-radius: 5px; /* Adjust the radius to create a semicircle at the left edge */
