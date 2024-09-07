@@ -4,6 +4,7 @@ import { BrowserRouter as Router, Routes, Route} from "react-router-dom";
 import MarketPlace from './components/marketplace';
 import ProjectDetails from './components/details';
 
+// This is a comment
 const App = ()=> {
   return (
     <>
