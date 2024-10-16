@@ -4,6 +4,7 @@ import bgImage from '../Assets/dashboard.png'
 import vector1 from '../Assets/Vector.png'
 import vector2 from '../Assets/Vector (1).png'
 import vector3 from '../Assets/Vector (2).png'
+import sendtoback from '../Assets/sendtoback.png'
 import group from '../Assets/Group.png'
 import Navbar from './navbar'
 
@@ -24,8 +25,8 @@ const Home = () => {
             <div className="  page-2  d-flex flex-row justify-content-around">
                 <div className='box' style={{ width: '30rem', height: '20rem', backgroundColor: '#D9D9D9', marginTop: '8rem' }}></div>
                 <form className=' font t-white' style={{ marginTop: '8rem' }}>
-                    <h1 style={{ fontWeight: 'bolder' }} >With Carbex, you can offset<br /> your carbon footprints with <br />confidence</h1>
-                    <h5>We're the industry's go-to for environmental solutions,<br /> connecting buyers and sellers of carbon credits with reliability<br /> and expertise. Join us in making a real impact on our planet.</h5>
+                    <h1 style={{ fontWeight: 'bolder', marginBottom:'2rem' }} >With Carbex, you can offset<br /> your carbon footprints with <br />confidence</h1>
+                    <h7 className='font'>We're the industry's go-to for environmental solutions,<br /> connecting buyers and sellers of carbon credits with reliability<br /> and expertise. Join us in making a real impact on our planet.</h7>
                     <div className='buttons mt-5'>
                         <button type="button" className="btn b btn-outline-primary learn">LearnMore</button>
                     </div>

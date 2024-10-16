@@ -1,8 +1,88 @@
+*{
+  padding: 0;
+  margin: 0;
+  font-family: "Rubik", sans-serif;
+
+}
+
+h2,p{
+  font-weight: lighter;
+}
+
 .home-page {
   background-image: url('./Assets/pexels-david-alberto-carmona-coto-1151418\ \(1\)\ 2.png'); 
   background-size: cover;
   background-position: center;
-  height: 100vh; 
+  padding-bottom: 2rem;
+}
+
+.tab-list{
+  display: flex;
+  margin-inline: auto;
+  justify-content: space-between;
+  list-style: none;
+  font-weight: lighter;
+  font-size: 1.3rem;
+  padding-left: 0;
+  margin-top: 4rem;
+  width: fit-content;
+  
+}
+
+.tab-list li{
+  cursor: pointer;
+  margin-left: 0;
+  font-size: large;
+  padding: 1rem 3rem;
+  letter-spacing: 1px;
+  border-bottom: 2px solid green;
+}
+
+.tab-item.active{
+  border-bottom: 2px solid #7DE391ed;
+  border-left: 0;
+}
+
+.circle{
+  width: 10rem;
+  height: 10rem;
+  border-radius: 100px;
+  background-color: #065F24;
+}
+
+.services{
+  background-image: linear-gradient(#FFFFFF,#F7F7F7);
+  border: 0.1px solid #F7F7F7;
+  border-bottom-left-radius: 80vmin;
+  border-bottom-right-radius: 80vmin;
+  margin-bottom: 6rem;
+}
+
+.card{
+  margin-bottom: 4rem;
+  height: 33vh;
+  border-radius: 20px;
+}
+
+.card .card-header{
+  height: 60%;
+  padding-top:2rem ;
+  background-color: #065F24;
+  color: whitesmoke;
+  border-top-left-radius: 20px;
+  border-top-right-radius: 20px;
+  
+}
+
+.for_image{
+  width: 21rem;
+  height: 23rem;
+  background-color: #065F24;
+  border: 0.1px solid #065F24 ;
+  
+  border-top-left-radius: 20px;
+  border-top-right-radius: 20px;
+
 }
 
 .cont{
@@ -62,10 +142,8 @@
 }
 
 .b{
-  width: 15rem;
-  height: 5rem;
-  font-size: 1.5rem;
-  padding:10px 20px ;
+  border:none;
+  background-color: white;
   border-top-left-radius: 50px; /* Adjust the radius to create a semicircle at the left edge */
   border-bottom-left-radius: 50px; /* Adjust the radius to create a semicircle at the left edge */
   border-top-right-radius: 50px; /* Adjust the radius to create a semicircle at the right edge */

@@ -26,7 +26,7 @@ app.get('/', (req, res) => {
 });
 
 
-app.listen(pfort, () => {
+app.listen(port, () => {
   console.log(`Server is running on http://localhost:${port}`);
 });
 
