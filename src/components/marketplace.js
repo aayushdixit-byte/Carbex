@@ -5,18 +5,19 @@ import ProductList from './productlist'
 const MarketPlace = () => {
     return (
         <>
-            <div className='market'>   
+            <div className='market' style={{backgroundColor:'#F4FFF6'}}>   
+                    {/* <Navbar/> */}
                 <div className='intro'>
-                    <Navbar/>
-                    <h1 className='t-white lspace cont' style={{fontWeight:'bold',margin: "5rem auto"}}>Some Text For Buyers who wanted of invest in offset by chosing project of their choice</h1>
+                    <p style={{color:'#18311D',fontWeight:'bold'}}>Shape Greener Future:</p>
+                    <h1 className='t-white lspace' style={{color:'#18311D'}}>Trade Verified <br/> Carbon Credits</h1>
                 </div>
-                <div className='categories' style={{margin:'4rem 2rem'}}>
+                <div className='categories' style={{margin:'4rem 1rem'}}>
                     <h3 style={{marginBottom:'2rem'}} >Browse By category</h3>
                     <img src={category} alt='categories' width={"100%"}/>
                 </div>
                 <div style={{margin:'4rem 2rem'}}>
                     <h3 className='lspace' style={{fontWeight:'bold',color:'#2F4834'}}>Projects</h3>
-
+                    
                     <ProductList/>
                 </div>
             </div>

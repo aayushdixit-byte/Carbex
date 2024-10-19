@@ -2,6 +2,7 @@ import React from 'react'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faSnapchat , faInstagram, faYoutube, faFacebookF,faXTwitter} from '@fortawesome/free-brands-svg-icons';
 import approachImg from '../Assets/Our-Approach.svg'
+import { Link } from 'react-router-dom';
 
 const HomePage = () => {
 
@@ -12,7 +13,7 @@ const HomePage = () => {
     };
 
   return (
-    <>
+    <div className='no-scrollbar'>
         <div className='home-page' >
             <div style={{display:'flex',paddingTop:'80vh',justifyContent:'space-between'}}> 
                 <form className="font t-white" style={{marginLeft: '3rem' }}>
@@ -104,7 +105,7 @@ const HomePage = () => {
         </div>
         <div className="approach" style={{display:'flex',flexDirection:'column',alignItems:'center',marginTop:'7rem',gap:'4rem'}}>
             <h2>Our Approach</h2>
-            <img src={approachImg} alt="Description of SVG" style={{width:'80vw',height:'25vh'}}/>
+            <img src={approachImg} alt="Description of SVG" style={{width:'83%',height:'40%'}}/>
             <button className="b" style={{width:'10rem',paddingBlock:'0.7rem',border:'2px solid #065F24',color:'#065F24'}}>Get Started</button>
         </div>
         <div className='products' style={{marginTop:'6rem'}}>
@@ -139,7 +140,8 @@ const HomePage = () => {
                         </div>
                     </div>
                 </div>
-                <button className='b' style={{fontWeight:'bolder',width:'15rem',height:'5rem',border:'5px solid #065F24',backgroundColor:'#F4FFF6',color:'#065F24',marginBlock:'4rem'}}>View All</button>
+                <Link to="/marketplace"><button className='b' style={{fontWeight:'bolder',width:'15rem',height:'5rem',border:'5px solid #065F24',backgroundColor:'#F4FFF6',color:'#065F24',marginBlock:'4rem'}}>View All</button>
+                </Link>
             </div>
         </div>
         <div style={{display:'flex',height:'50vh',justifyContent:'space-around',alignItems:'center',backgroundColor:"#065F24",paddingBlock:'5rem'}}>
@@ -215,7 +217,7 @@ const HomePage = () => {
                 </div>
             </div>
         </div>
-    </>
+    </div>
   )
 }
 

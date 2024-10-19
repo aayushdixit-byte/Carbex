@@ -1,5 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import projectImage from '../Assets/project_img.png'
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import { faCartShopping } from '@fortawesome/free-solid-svg-icons';
 
 function ProductList() {
   const [products, setProducts] = useState([]);
@@ -31,19 +33,23 @@ function ProductList() {
   }
 
   return (
-    <>{products.map(product => (
-
-      <div key={product.id} style={{display:'flex',width:'80vw',backgroundColor:'#2C4331',borderRadius:'3rem',margin:'3rem auto'}} >
-        <img src={projectImage} alt='project image'/>
-        <form className='cont_one' style={{color:'white',fontWeight:'bold',margin:'4rem 6rem'}}>
-          <h1 className='lspace' style={{fontSize:'4rem',fontWeight:'bold'}}>{product.productName}</h1>
-          <h3 className='lspace' style={{marginBlock:'2rem',fontSize:'3rem',fontWeight:'bold'}}>Location</h3>
-          <h5 style={{fontSize:'25px'}}>{product.productDescription}</h5>
-        </form>
+      <div style={{display:'flex',flexWrap:'wrap',justifyContent:'space-around'}}>
+          {products.map(product => (
+            <div key={product.id} style={{backgroundColor:'white',width:'21%',height:'fit-content',marginBottom:'2rem',paddingBottom:'2rem'}} >
+              <img src={projectImage} width={'100%'} height={'50%'} alt='project image'/>
+              <form className='cont_one' style={{marginInline:'2rem'}}>
+                <h5 style={{color:'#182330',marginTop:'2rem',fontWeight:'bold'}}>Location</h5>
+                <h3 style={{color:'#065F24' ,fontWeight:'lighter'}}>{product.productName}</h3>
+                <h5 style={{color:'#000000' ,fontWeight:'lighter'}}>{product.productDescription}</h5>
+                <p>Price per tonne</p>
+                <div style={{display:'flex',justifyContent:'space-between'}}>
+                  <FontAwesomeIcon icon={faCartShopping} color='#065F24' size='2x'/>
+                  <button style={{width:'7rem',backgroundColor:'white',border:'2px solid black'}}>SEE MORE</button>
+                </div>
+              </form>
+            </div>
+          ))}
       </div>
-
-    ))}
-    </>
   );
 }
 

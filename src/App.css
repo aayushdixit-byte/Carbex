@@ -2,8 +2,19 @@
   padding: 0;
   margin: 0;
   font-family: "Rubik", sans-serif;
-
+  box-sizing: border-box;
 }
+
+.no-scrollbar {
+  overflow-y: scroll;
+  scrollbar-width: none;
+  -webkit-overflow-scrolling: touch; /* Smooth scrolling on iOS */
+}
+
+.no-scrollbar::-webkit-scrollbar {
+  display: none;
+}
+
 
 h2,p{
   font-weight: lighter;
@@ -86,7 +97,6 @@ h2,p{
 }
 
 .cont{
-  width: 500px;
   text-align: center;
   overflow-wrap: break-word;
 }
@@ -97,7 +107,6 @@ h2,p{
 }
 
 .cont_one{
-  width: 500px;
   overflow-wrap: break-word;
 }
 
@@ -242,9 +251,16 @@ h2,p{
 
 /*  ******** MarketPlace ******* */
 
+/* .market{
+  padding: 0;
+  margin: 0;
+
+
+} */
+
 .intro{
-  background-image: url('./Assets/back2.png');
   height: 35rem;
+  padding: 8rem 4rem;
 }
 
 .proj-detail{
