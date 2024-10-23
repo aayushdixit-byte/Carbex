@@ -5,13 +5,7 @@
   box-sizing: border-box;
 }
 
-.no-scrollbar {
-  overflow-y: scroll;
-  scrollbar-width: none;
-  -webkit-overflow-scrolling: touch; /* Smooth scrolling on iOS */
-}
-
-.no-scrollbar::-webkit-scrollbar {
+body::-webkit-scrollbar{
   display: none;
 }
 
@@ -251,13 +245,6 @@ h2,p{
 
 /*  ******** MarketPlace ******* */
 
-/* .market{
-  padding: 0;
-  margin: 0;
-
-
-} */
-
 .intro{
   height: 35rem;
   padding: 8rem 4rem;
@@ -289,4 +276,59 @@ h2,p{
 
 .active{
   border-left: 4px solid #3BED96;
+}
+
+/* ******************************* PRODUCT DETAILS ******************************* */
+
+nav ul{
+  margin-top: 6rem;
+  margin-left: 3rem;
+  list-style: none;
+  display: flex;
+  flex-basis: fit-content;
+  border: 2px solid #065F24;
+  width: fit-content;
+  padding: 0;
+  border-radius: 10rem;
+  color:#065F24 ;
+}
+
+nav ul li{
+  padding: .6rem 2rem;
+  border-radius: 10rem;
+  cursor: pointer;
+}
+
+.active_desc{
+  background-color: #065F24;
+  color: white;
+
+}
+
+.grad_border {
+  border: 2px solid; /* Define border thickness */
+  border-image: linear-gradient(to right, #37AE56, #1A93D7) 1;
+}
+
+.grad_text{
+  background: linear-gradient(to right, #37AE56, #1A93D7);
+  background-clip: text;
+  color: transparent;
+}
+
+.pro_image{
+  height: 17vw;
+  width: 25vw;
+  background-color: #065F24;
+}
+
+.pro_tags{
+  height: 20px;
+  width: 20px;
+}
+
+h4{
+  font-weight: lighter;
+  color: #065F24;
+
 }

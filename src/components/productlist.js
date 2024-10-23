@@ -2,6 +2,8 @@ import React, { useState, useEffect } from 'react';
 import projectImage from '../Assets/project_img.png'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faCartShopping } from '@fortawesome/free-solid-svg-icons';
+import product_details from './product_details';
+import { Link } from 'react-router-dom';
 
 function ProductList() {
   const [products, setProducts] = useState([]);
@@ -44,7 +46,7 @@ function ProductList() {
                 <p>Price per tonne</p>
                 <div style={{display:'flex',justifyContent:'space-between'}}>
                   <FontAwesomeIcon icon={faCartShopping} color='#065F24' size='2x'/>
-                  <button style={{width:'7rem',backgroundColor:'white',border:'2px solid black'}}>SEE MORE</button>
+                  <Link to="/product_details"><button style={{width:'7rem',cursor:'pointer',backgroundColor:'white',border:'2px solid black'}}>SEE MORE</button></Link>
                 </div>
               </form>
             </div>

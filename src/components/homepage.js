@@ -13,7 +13,7 @@ const HomePage = () => {
     };
 
   return (
-    <div className='no-scrollbar'>
+    <div>
         <div className='home-page' >
             <div style={{display:'flex',paddingTop:'80vh',justifyContent:'space-between'}}> 
                 <form className="font t-white" style={{marginLeft: '3rem' }}>
