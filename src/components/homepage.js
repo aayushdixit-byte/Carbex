@@ -18,7 +18,7 @@ const HomePage = () => {
             <div style={{display:'flex',paddingTop:'80vh',justifyContent:'space-between'}}> 
                 <form className="font t-white" style={{marginLeft: '3rem' }}>
                     <h3 style={{ fontSize: '3.2rem', fontWeight: 'lighter' }}>Erase Carbon Footprints and Combat Global Warming.</h3>
-                    <h4 style={{ marginTop: '2rem', fontWeight: 'lighter'}}>Transforming Industries with Authentic Carbon Neutrality Solutions,<br /> Shaping a Trustworthy Path to Net Zero.</h4>
+                    <h4 style={{ marginTop: '2rem', fontWeight: 'lighter',color:'white'}}>Transforming Industries with Authentic Carbon Neutrality Solutions,<br /> Shaping a Trustworthy Path to Net Zero.</h4>
                 </form>
                 <div className='icons' style={{display:'flex',flexDirection:'column',gap:'9px'}}>
                     <FontAwesomeIcon icon={faXTwitter} color='white' size='2x'/>
@@ -166,7 +166,7 @@ const HomePage = () => {
                 </div>
                 <div style={{marginBottom:'1rem'}}>
                     <label><i>Phone/Mobile no.</i></label><br/>
-                    <input type="integer" required style={{borderRadius:'6px',height:'40px',width:'18rem'}}ed />
+                    <input type="integer" required style={{borderRadius:'6px',height:'40px',width:'18rem'}}/>
                 </div>
                 <button className='b' style={{width:'10rem',paddingBlock:'0.4rem',marginTop:'0.7rem',backgroundColor:'white',color:'#065F24'}}>Send</button>
             </form>

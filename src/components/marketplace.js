@@ -1,12 +1,11 @@
-import category from '../Assets/project category.png'
-import Navbar from './navbar'
+import category from '../Assets/project_category.png'
 import ProductList from './productlist'
+
 
 const MarketPlace = () => {
     return (
         <>
             <div className='market' style={{backgroundColor:'#F4FFF6'}}>   
-                    {/* <Navbar/> */}
                 <div className='intro'>
                     <p style={{color:'#18311D',fontWeight:'bold'}}>Shape Greener Future:</p>
                     <h1 className='t-white lspace' style={{color:'#18311D'}}>Trade Verified <br/> Carbon Credits</h1>

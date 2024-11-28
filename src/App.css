@@ -280,26 +280,31 @@ h2,p{
 
 /* ******************************* PRODUCT DETAILS ******************************* */
 
+nav{
+  width: fit-content;
+  position: sticky;
+  top: 10px;
+}
+
 nav ul{
   margin-top: 6rem;
+  background-color: white;
   margin-left: 3rem;
   list-style: none;
   display: flex;
-  flex-basis: fit-content;
   border: 2px solid #065F24;
-  width: fit-content;
   padding: 0;
   border-radius: 10rem;
   color:#065F24 ;
 }
 
 nav ul li{
-  padding: .6rem 2rem;
+  padding: .6rem 1rem;
   border-radius: 10rem;
   cursor: pointer;
 }
 
-.active_desc{
+.active{
   background-color: #065F24;
   color: white;
 
@@ -332,3 +337,6 @@ h4{
   color: #065F24;
 
 }
+
+/* //////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////// */
+/* Navbar styles */

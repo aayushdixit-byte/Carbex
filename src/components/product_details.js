@@ -1,39 +1,78 @@
-import React from 'react'
+import React,{useRef,useEffect} from 'react'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faLocationDot } from '@fortawesome/free-solid-svg-icons'
+import { useLocation } from 'react-router-dom'
 
 const Details = () => {
 
-    const [activeTab, setActiveTab] = React.useState(0);
+    const [activeTab, setActiveTab] = React.useState("overview");
+    const location = useLocation()
+    const project = location.state || {}
 
-    const handleTabClick = (index) => {
-        setActiveTab(index);
+    const sectionRefs = {
+        overview: useRef(null),
+        details: useRef(null),
+        description: useRef(null),
+        verification: useRef(null),
+        document: useRef(null),
+        status: useRef(null),
     };
+
+    const handleScrollToSection = (section) => {
+        sectionRefs[section]?.current.scrollIntoView({
+          behavior: "smooth",
+          block: "start",
+        });
+    };
+
+    useEffect(() => {
+        const handleScroll = () => {
+          const currentScroll = window.scrollY;
+    
+          for (const [section, ref] of Object.entries(sectionRefs)) {
+            const element = ref.current;
+            if (element) {
+              const { offsetTop, offsetHeight } = element;
+              if (currentScroll >= offsetTop - 100 && currentScroll < offsetTop + offsetHeight - 100) {
+                setActiveTab(section);
+                break;
+              }
+            }
+          }
+        };
+    
+        window.addEventListener("scroll", handleScroll);
+        return () => window.removeEventListener("scroll", handleScroll);
+      }, []);
+
   return (
-    <>
+    <div className='project_details'>
         <header style={{height:'70vh',marginTop:'8rem',backgroundColor:'#065F24',color:'white',paddingTop:'55vh' }}>
             <div style={{marginLeft:'3rem',top:'20rem'}}>
-                <h1>Forest Conservation Initiative</h1>
+                <h1>{project.projectName}</h1>
                 <div style={{display:'flex'}}>
                     <FontAwesomeIcon icon={faLocationDot} color='white' size='2x' style={{marginInline:'1rem'}}/>
-                    <p>Mountain Ave, Arizona, USA</p>
+                    <p>{project.countryId.country}</p>
                 </div>
             </div>
         </header>
         <nav>
             <ul>
-                <li className={`${activeTab === 0 ? 'active_desc' : ''}`} onClick={()=>handleTabClick(0)}>OVERVIEW</li>
-                <li className={`${activeTab === 1 ? 'active_desc' : ''}`} onClick={()=>handleTabClick(1)}>PROJECT DETAILS</li>
-                <li className={`${activeTab === 2 ? 'active_desc' : ''}`} onClick={()=>handleTabClick(2)}>DESCRIPTION</li>
-                <li className={`${activeTab === 3 ? 'active_desc' : ''}`} onClick={()=>handleTabClick(3)}>VERIFICATION</li>
-                <li className={`${activeTab === 4 ? 'active_desc' : ''}`} onClick={()=>handleTabClick(4)}>DOCUMENT</li>
-                <li className={`${activeTab === 5 ? 'active_desc' : ''}`} onClick={()=>handleTabClick(5)}>STATUS</li>
+                {Object.keys(sectionRefs).map((section) => (
+                    <li
+                        key={section}
+                        className={`nav-item ${activeTab === section ? "active" : ""}`}
+                        onClick={() => handleScrollToSection(section)}
+                    >
+                        {section.charAt(0).toUpperCase() + section.slice(1)}
+                    </li>
+                ))}
             </ul>
         </nav>
-        <div style={{display:'flex',justifyContent:'space-around',marginTop:'4rem'}}>
+        <div id='overview' ref={sectionRefs.overview} style={{display:'flex',justifyContent:'space-around',marginTop:'4rem'}}>
             <div style={{width:'40%',display:'flex',flexDirection:'column',justifyContent:'center'}}>
                 <h2 style={{textAlign:'center',color:'#065F24',marginBottom:'2rem'}}>OVERVIEW</h2>
-                <p>This project helps small communities plant trees to create a nature-based carbon removal system that helps train leaders and pull families out of poverty. This project helps small communities plant trees to create a nature-based carbon removal system that helps train leaders and pull families out of poverty.</p>
+                <p>{project.projectDescription}</p>
             </div>
             <div className='grad_border' style={{display:'flex',justifyContent:'center',alignItems:'center',flexDirection:'column',gap:'1rem',padding:'2rem 4rem'}}>
                 <h3 className='grad_text' style={{}}>OFFSET WITH <br/> THIS PROJECT</h3>
@@ -60,16 +99,16 @@ const Details = () => {
                 <li className='pro_tags'></li>
             </ul>
         </div>
-        <div style={{marginLeft:'4rem'}}>
+        <div id='details' ref={sectionRefs.details} style={{marginLeft:'4rem'}}>
             <h2 style={{color:'#065F24'}}>PROJECT DETAILS</h2>
             <form style={{marginTop:'3rem',marginLeft:'6rem'}}>
                 <span style={{display:'flex', gap:'4rem',marginBottom:'2rem'}}>
                     <h4>Project Type:</h4>
-                    <p>Community Project/Forestation</p>
+                    <p>{project.projectType}</p>
                 </span>
                 <span style={{display:'flex',gap:'4rem',marginBottom:'2rem'}}>
                     <h4>Project ID:</h4>
-                    <p></p>
+                    <p>{project.projectid}</p>
                 </span>
                 <span style={{display:'flex',gap:'4rem',marginBottom:'2rem'}}>
                     <h4>Verification Standards:</h4>
@@ -77,12 +116,12 @@ const Details = () => {
                 </span>
             </form>
         </div>
-        <div>
+        <div id='description' ref={sectionRefs.description}>
             <h2 style={{width:'fit-content',marginInline:'auto',marginTop:'4rem'}}>DESCRIPTION</h2>
             <div style={{display:'flex',flexDirection:'column',alignItems:'center'}}>
                 <span style={{width:'60vw',marginBottom:'3rem'}}>
                     <h3 style={{marginBottom:'8px',color:'#065F24',fontWeight:'light'}}>Mission & Vision</h3>
-                    <p>This project helps small communities plant trees to create a nature-based carbon removal system that helps train leaders and pull families out of poverty.</p>
+                    <p>{project.projectDescription}</p>
                 </span>
                 <span style={{width:'60vw',marginBottom:'3rem'}}>
                     <h3 style={{marginBottom:'8px',color:'#065F24',fontWeight:'light'}}>How it works</h3>
@@ -98,7 +137,7 @@ const Details = () => {
                 </span>
             </div>
         </div>
-        <div style={{display:'flex',flexDirection:'column',alignItems:'center',gap:'2rem'}}>
+        <div id='verification' ref={sectionRefs.verification} style={{display:'flex',flexDirection:'column',alignItems:'center',gap:'2rem'}}>
             <h4>LOCATION</h4>
             <div style={{width:'35vw',height:'15vw',backgroundColor:'#065F24'}}></div>
             <h4>Verification and Certification</h4>
@@ -110,7 +149,7 @@ const Details = () => {
             <h4>DOCUMENTS</h4>
 
         </div>
-    </>
+    </div> 
   )
 }
 
